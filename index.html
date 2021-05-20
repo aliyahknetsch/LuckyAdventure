@@ -8,6 +8,7 @@
 
 <body id="body">
     <div id="background">
+        <button id="blue-mode" onclick="BlueToggleMode()">Blue mode</button>
         <button id="lightmode" onclick="ToggleMode()">Light mode</button>
         <button id="clicker-start" onclick="startClicker()">Darker mode</button>
         <h1 id="title"><span class="colourable" onClick="setRandomElementColor(this)">L</span><span class="colourable"
@@ -31,7 +32,7 @@
             <span class="colourable" onClick="setRandomElementColor(this)">r</span><span class="colourable"
                 onClick="setRandomElementColor(this)">e</span><span class="colourable"
                 onClick="setRandomElementColor(this)">!</span>
-        </h1>
+        </h1>   
         <div id="clicker" hidden=true>
             <br><br>
             <table id="clickerdisplay">
@@ -234,6 +235,7 @@
 <script type="text/javascript" src="LuckyAdventureIncludes/Scripts/Clicker.js"></script>
 <script>
     var epilepsy = 0;
+    var blue = 0;
 
     function ToggleMode() {
         epilepsy = !epilepsy;
@@ -244,6 +246,32 @@
         color = "#" + Math.floor(Math.random() * 16777215).toString(16);
         element.style.color = color;
     }
+    function BlueToggleMode() {
+        blue = !blue;
+        document.getElementById("blue-mode").textContent = (blue ? "Dark mode" : "Blue mode");
+    }
+    function BlueMode() { 
+        if (blue == 1) {
+            bg = "#4b8df0";
+            fg = "#000000";
+            fg2 = "#000000";
+        } else {
+            bg = "";
+            fg = "";
+            fg2 = "";
+        }
+        document.getElementById("consoletext").style.color = fg;
+        document.getElementById("prompt").style.color = fg;
+        document.getElementById("textinput").style.color = fg;
+        document.getElementById("clicker-start").style.color = bg;
+        document.getElementById("clicker-start").style.backgroundColor = fg;
+        document.getElementById("hiddenmsg").style.color = bg;
+        document.getElementById("consoletext").style.backgroundColor = bg;
+        document.getElementById("textinput").style.backgroundColor = bg;
+        document.getElementById("background").style.backgroundColor = bg;
+        document.getElementById("title").style.color = fg2;
+    }
+    setInterval(BlueMode, 1);
 
     function updateColor() {
         if (epilepsy == 1) {
@@ -266,7 +294,7 @@
         document.getElementById("background").style.backgroundColor = bg;
         document.getElementById("title").style.color = fg2;
     }
-    setInterval(updateColor, 20);
+    setInterval(updateColor, 10);
 
     var secretunlock = (new URLSearchParams(window.location.search)).get("code") == 720;
     if (secretunlock) {
