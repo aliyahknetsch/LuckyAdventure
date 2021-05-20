@@ -90,11 +90,13 @@ body {
 #blue-mode {
     position: absolute;
     top: 0px;
-    right: 700px;
+    right: 50%;
     color: #4b8df0;
-    font-family: cursive;
+    text-align: center;
+    font-family: "Comic Sans MS";
     background-color: rgb(255, 255, 255);
-    border: none;
+    border-width: thick;
+    border-color: white;
 }
 
 .colourable {
