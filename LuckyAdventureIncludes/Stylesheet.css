@@ -98,6 +98,18 @@ body {
     border-width: thick;
     border-color: white;
 }
+#blue-seizure-mode {
+    position: absolute;
+    top: 0px;
+    right: 25%;
+    color: #ffff;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    background-color: #4b8df0;
+    border-width: thick;
+    border-color: 4b8df0;
+}
+
 
 .colourable {
     cursor: pointer;
