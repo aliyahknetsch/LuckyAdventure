@@ -573,7 +573,9 @@ function updateText() {
 
 function startClicker() {
     epilepsy = 0;
+    blue = 0;
     document.getElementById("lightmode").hidden = true;
+    document.getElementById("blue-mode").hidden = true;
     document.getElementById("clicker-start").hidden = true;
     document.getElementById("console").hidden = true;
     document.getElementById("hiddenmsg").hidden = true;
