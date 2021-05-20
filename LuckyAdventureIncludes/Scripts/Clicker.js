@@ -574,6 +574,7 @@ function updateText() {
 function startClicker() {
     epilepsy = 0;
     blue = 0;
+    blueseizure = 0;
     document.getElementById("lightmode").hidden = true;
     document.getElementById("blue-mode").hidden = true;
     document.getElementById("blue-seizure-mode").hidden = true;
